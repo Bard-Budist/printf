@@ -10,4 +10,6 @@
   - [twitter @calypsobronte](https://twitter.com/calypsobronte)
 
 ## Project Details
-![https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/228/printf.png]
+![printf][]
+
+[printf]: https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/228/printf.png
