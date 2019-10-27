@@ -61,7 +61,12 @@ void printInteger(va_list lista)
 	}
 	while (cont2 > 0)
 	{
-		_putchar(((integer / cont2) % 10) + '0'); /* ASCII '0 = '48 */
+		if (cont2 == 0)
+		{
+			_putchar((integer % 10) + '0');
+		}
+		else
+			_putchar(((integer / cont2) % 10) + '0'); /* ASCII '0 = '48 */
 		cont2 /= 10;
 	}
 }
