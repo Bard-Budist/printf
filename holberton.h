@@ -2,7 +2,12 @@
 #define header_file
 
 #include <stdarg.h>
-
+/**
+ * struct typeprint - create libraries
+ * @typec: char
+ * @fun: point void of lista
+ * Description: struct
+ */
 typedef struct typeprint
 {
 	char typec;
@@ -14,7 +19,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 void printString(va_list lista);
 void printChar(va_list lista);
-void printPorce();
+void printPorce(void);
 int printDecimal(va_list lista);
 
 #endif /* Libraries Printf Giovanni and Lina */
