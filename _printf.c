@@ -49,7 +49,7 @@ int printPorce(va_list lista)
 
 	if (porce != '\0')
 		_putchar('%');
-	return (1);
+	return (-1);
 }
 /**
  *  * _printf - Printf!!
@@ -79,6 +79,7 @@ int _printf(const char *format, ...)
 			{
 				cont += tipos[j].fun(list);
 				i += 2;
+				break;
 			}
 		}
 		_putchar(format[i]);
