@@ -68,4 +68,3 @@ int printInteger(va_list lista)
 	}
 	return (cont);
 }
-
