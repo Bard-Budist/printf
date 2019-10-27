@@ -4,9 +4,10 @@
 #include <stdio.h>
 
 /**
- *  * printString - Print String
- *   * @lista: Var list
- *    */
+ * printString - Print String
+ * @lista: Var list
+ * Return: 0
+ **/
 int printString(va_list lista)
 {
 	int cs = 0;
@@ -23,9 +24,10 @@ int printString(va_list lista)
 }
 
 /**
- *  * printChar - Print String
- *   * @lista: Var list
- *    */
+ * printChar - Print String
+ * @lista: Var list
+ * Return: 0
+ **/
 int printChar(va_list lista)
 {
 	char chart = va_arg(lista, int);
@@ -39,9 +41,10 @@ int printChar(va_list lista)
 }
 
 /**
- *  * printPorce - Print String
- *   * @lista: Parameter
- *    */
+ * printPorce - Print String
+ * @lista: Parameter
+ * Return: -1
+ */
 
 int printPorce(va_list lista)
 {
@@ -52,11 +55,10 @@ int printPorce(va_list lista)
 	return (-1);
 }
 /**
- *  * _printf - Printf!!
- *   * @format: Format
- *    * Return: len
- *     *
- *      */
+ * _printf - Printf!!
+ * @format: Format
+ * Return: len
+ */
 int _printf(const char *format, ...)
 {
 	const typedate tipos[] = {
