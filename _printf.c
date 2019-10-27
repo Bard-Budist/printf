@@ -17,8 +17,9 @@ int printString(va_list lista)
 		while (string[cs] != '\0')
 			cs++;
 		write(1, string, cs);
+		return (cs);
 	}
-	return (cs - 1);
+	return (0);
 }
 
 /**
@@ -83,5 +84,5 @@ int _printf(const char *format, ...)
 		_putchar(format[i]);
 		i++;
 	}
-	return ((i + cont) - 1);
+	return (i + cont);
 }
