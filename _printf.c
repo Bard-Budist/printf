@@ -6,8 +6,9 @@
 /**
  * printString - Print String
  * @lista: Var list
- */
-void printString(va_list lista)
+ * Return: 0
+ **/
+int printString(va_list lista)
 {
 	int cs = 0;
 	char *string = va_arg(lista, char*);
@@ -17,38 +18,46 @@ void printString(va_list lista)
 		while (string[cs] != '\0')
 			cs++;
 		write(1, string, cs);
+		return (cs);
 	}
+	return (0);
 }
 
 /**
  * printChar - Print String
  * @lista: Var list
- */
-void printChar(va_list lista)
+ * Return: 0
+ **/
+int printChar(va_list lista)
 {
 	char chart = va_arg(lista, int);
 
 	if (chart != '\0')
+	{
 		_putchar(chart);
+		return (1);
+	}
+	return (0);
 }
 
 /**
  * printPorce - Print String
  * @lista: Parameter
+ * Return: -1
  */
 
-void printPorce(va_list lista)
+int printPorce(va_list lista)
 {
 	char porce = va_arg(lista, int);
 
 	if (porce != '\0')
 		_putchar('%');
+	return (-1);
 }
 /**
  * _printf - Printf!!
  * @format: Format
  * Return: len
- *
  */
 int _printf(const char *format, ...)
 {
@@ -60,7 +69,7 @@ int _printf(const char *format, ...)
 		{'d', printDecimal},
 		{'b', printBinary}
 	};
-	int i = 0, j = 0;
+	int i = 0, j = 0, cont = 0;
 	va_list list;
 
 	va_start(list, format);
@@ -70,12 +79,13 @@ int _printf(const char *format, ...)
 		{
 			if (format[i] == '%' && format[i + 1] == tipos[j].typec)
 			{
-				tipos[j].fun(list);
+				cont += tipos[j].fun(list);
 				i += 2;
+				break;
 			}
 		}
 		_putchar(format[i]);
 		i++;
 	}
-	return (i - 1);
+	return (i + cont);
 }

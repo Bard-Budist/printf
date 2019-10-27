@@ -11,16 +11,16 @@
 typedef struct typeprint
 {
 	char typec;
-	void (*fun)(va_list lista);
+	int (*fun)(va_list lista);
 } typedate;
 
 int _strcmp(char *s1, char *s2);
 int _putchar(char c);
 int _printf(const char *format, ...);
-void printString(va_list lista);
-void printChar(va_list lista);
-void printPorce(va_list lista);
-void printDecimal(va_list lista);
-void printInteger(va_list lista);
-void printBinary(va_list lista);
+int  printString(va_list lista);
+int printChar(va_list lista);
+int printPorce(va_list lista);
+int printDecimal(va_list lista);
+int printInteger(va_list lista);
+int printBinary(va_list lista);
 #endif /* Libraries Printf Giovanni and Lina */
