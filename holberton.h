@@ -22,4 +22,5 @@ void printChar(va_list lista);
 void printPorce();
 void printDecimal(va_list lista);
 void printInteger(va_list lista);
+void printBinary(va_list lista);
 #endif /* Libraries Printf Giovanni and Lina */

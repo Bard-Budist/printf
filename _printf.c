@@ -53,7 +53,8 @@ int _printf(const char *format, ...)
 		{'c', printChar},
 		{'%', printPorce},
 		{'i', printInteger},
-		{'d', printDecimal}
+		{'d', printDecimal},
+		{'b', printBinary}
 	};
 	int i = 0, j = 0;
 	va_list list;
