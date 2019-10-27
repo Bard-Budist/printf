@@ -4,10 +4,10 @@
 #include <stdio.h>
 
 /**
- * printString - Print String
- * @lista: Var list
- * Return: 0
- **/
+ *  * printString - Print String
+ *   * @lista: Var list
+ *    * Return: 0
+ *     **/
 int printString(va_list lista)
 {
 	int cs = 0;
@@ -16,18 +16,19 @@ int printString(va_list lista)
 	if (string != NULL)
 	{
 		while (string[cs] != '\0')
+		{
+			_putchar(string[cs]);
 			cs++;
-		write(1, string, cs);
-		return (cs);
+		}
 	}
-	return (0);
+	return (cs);
 }
 
 /**
- * printChar - Print String
- * @lista: Var list
- * Return: 0
- **/
+ *  * printChar - Print String
+ *   * @lista: Var list
+ *    * Return: 0
+ *     **/
 int printChar(va_list lista)
 {
 	char chart = va_arg(lista, int);
@@ -39,21 +40,6 @@ int printChar(va_list lista)
 	}
 	return (0);
 }
-
-/**
- * printPorce - Print String
- * @lista: Parameter
- * Return: -1
- */
-
-int printPorce(va_list lista)
-{
-	char porce = va_arg(lista, int);
-
-	if (porce != '\0')
-		_putchar('%');
-	return (-1);
-}
 /**
  * _printf - Printf!!
  * @format: Format
@@ -64,7 +50,6 @@ int _printf(const char *format, ...)
 	const typedate tipos[] = {
 		{'s', printString},
 		{'c', printChar},
-		{'%', printPorce},
 		{'i', printInteger},
 		{'d', printDecimal},
 		{'b', printBinary}
@@ -75,17 +60,32 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format && format[i])
 	{
-		for (j = 0; j < 6; j++)
+		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			if (format[i] == '%' && format[i + 1] == tipos[j].typec)
+			for (j = 0; j < 5; j++)
 			{
-				cont += tipos[j].fun(list);
-				i += 2;
-				break;
+				if (format[i] == '%' && format[i + 1] == tipos[j].typec)
+				{
+					cont += tipos[j].fun(list);
+					i++;
+				}
 			}
 		}
-		_putchar(format[i]);
+		else if (format[i] == '%' && format[i + 1] == '%')
+		{
+			_putchar('%');
+			i++;
+			cont += 1;
+
+		}
+		else
+		{
+			_putchar(format[i]);
+			cont++;
+		}
 		i++;
 	}
-	return (i + cont);
+	va_end(list);
+	return (cont);
 }
+
