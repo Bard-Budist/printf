@@ -34,11 +34,15 @@ void printChar(va_list lista)
 
 /**
  * printPorce - Print String
+ * @lista: Parameter
  */
 
-void printPorce()
+void printPorce(va_list lista)
 {
-	_putchar('%');
+	char porce = va_arg(lista, int);
+
+	if (porce != '\0')
+		_putchar('%');
 }
 /**
  * _printf - Printf!!
@@ -60,7 +64,7 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	va_start(list, format);
-	while (format[i])
+	while (format && format[i])
 	{
 		for (j = 0; j < 6; j++)
 		{

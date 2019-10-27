@@ -19,7 +19,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 void printString(va_list lista);
 void printChar(va_list lista);
-void printPorce();
+void printPorce(va_list lista);
 void printDecimal(va_list lista);
 void printInteger(va_list lista);
 void printBinary(va_list lista);
