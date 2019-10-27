@@ -19,7 +19,6 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int  printString(va_list lista);
 int printChar(va_list lista);
-int printPorce(va_list lista);
 int printDecimal(va_list lista);
 int printInteger(va_list lista);
 int printBinary(va_list lista);
