@@ -1,7 +1,8 @@
 .\" Manpage for nuseradd.
 .\" Contact vivek@nixcraft.net.in to correct errors or typos.
-.TH man 8 "06 May 2010" "1.0" "nuseradd man page"
+.TH man 3 "26 Oct 2019" "1.0" "_printf man page"
 .SH NAME
+.B _printf
 nuseradd \- create a new LDAP user
 .SH SYNOPSIS
 nuseradd [USERNAME]
@@ -15,4 +16,4 @@ useradd(8), passwd(5), nuseradd.debian(8)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Vivek Gite (vivek@nixcraft.net.in)
+Giovanni Ayala (https://github.com/GiovanniAyala) and Lina Marìa Montaño Ramìrez (https://github.com/calypsobronte)
