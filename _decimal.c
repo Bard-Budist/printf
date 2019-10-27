@@ -29,8 +29,8 @@ void printDecimal(va_list lista)
 	}
 	while (cont2 > 0)
 	{
-		_putchar(((decimal / num) % 10) + '0'); /* ASCII '0 = '48 */
-		num /= 10;
+		_putchar(((decimal / cont2) % 10) + '0'); /* ASCII '0 = '48 */
+		cont2 /= 10;
 	}
 }
 
@@ -61,7 +61,12 @@ void printInteger(va_list lista)
 	}
 	while (cont2 > 0)
 	{
-		_putchar(((integer / num) % 10) + '0'); /* ASCII '0 = '48 */
-		num /= 10;
+		if (cont2 == 0)
+		{
+			_putchar((integer % 10) + '0');
+		}
+		else
+			_putchar(((integer / cont2) % 10) + '0'); /* ASCII '0 = '48 */
+		cont2 /= 10;
 	}
 }
