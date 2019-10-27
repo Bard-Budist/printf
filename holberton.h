@@ -10,13 +10,8 @@
  */
 typedef struct typeprint
 {
-<<<<<<< HEAD
 	char typec;
 	void (*fun)(va_list lista);
-=======
-char typec;
-void (*fun)(va_list lista);
->>>>>>> 84ff6b2ecec0818096e1c7a2f788aa3909516089
 } typedate;
 
 int _strcmp(char *s1, char *s2);
