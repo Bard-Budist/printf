@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 /**
  * printDecimal - Print Decimal
  * @lista: Var list

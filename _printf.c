@@ -52,6 +52,8 @@ int _printf(const char *format, ...)
 		{'s', printString},
 		{'c', printChar},
 		{'%', printPorce},
+		{'i', printInteger},
+		{'d', printDecimal}
 	};
 	int i = 0, j = 0;
 	va_list list;
