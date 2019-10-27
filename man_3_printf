@@ -1,18 +1,19 @@
-.\" Manpage for nuseradd.
-.\" Contact vivek@nixcraft.net.in to correct errors or typos.
+.\" Manpage for gioandlina.
+.\" Contact calypsobronte@calypsobronte.me or gio in to correct errors or typos.
 .TH man 3 "26 Oct 2019" "1.0" "_printf man page"
 .SH NAME
 .B _printf
-nuseradd \- create a new LDAP user
+- Formatted output conversion
 .SH SYNOPSIS
-nuseradd [USERNAME]
+.B #include "holberton.h"
+
+.B int _printf(const char *format, ...)
 .SH DESCRIPTION
-nuseradd is high level shell program for adding users to LDAP server.  On Debian, administrators should usually use
-nuseradd.debian(8) instead.
+conversion specifiers: c , s , %, d, i
 .SH OPTIONS
-The nuseradd does not take any options. However, you can supply username.
+others
 .SH SEE ALSO
-useradd(8), passwd(5), nuseradd.debian(8)
+printf(3)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
