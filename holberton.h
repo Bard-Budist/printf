@@ -20,6 +20,6 @@ int _printf(const char *format, ...);
 void printString(va_list lista);
 void printChar(va_list lista);
 void printPorce();
-int printDecimal(va_list lista);
-int printInteger(va_list lista);
+void printDecimal(va_list lista);
+void printInteger(va_list lista);
 #endif /* Libraries Printf Giovanni and Lina */
