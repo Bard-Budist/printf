@@ -54,7 +54,7 @@ typedate tipos[] = {
 	{'o', printOctal}
 };
 va_list list;
-int cont = 0;
+int cont = -1;
 
 if (format != NULL)
 {
