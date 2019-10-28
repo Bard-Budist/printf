@@ -3,7 +3,7 @@
 /**
  * printBinary - Print number binary
  * @lista: List elemnts
- *
+ * Return: contador
  */
 int printBinary(va_list lista)
 {
