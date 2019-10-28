@@ -7,12 +7,8 @@
 int _printf(const char *format, ...)
 {
 	const typedate tipos[] = {
-		{'s', printString},
-		{'c', printChar},
-		{'i', printInteger},
-		{'d', printDecimal},
-		{'b', printBinary},
-		{'u', printUnsigned},
+		{'s', printString}, {'c', printChar}, {'i', printInteger},
+		{'d', printDecimal}, {'b', printBinary}, {'u', printUnsigned},
 		{'o', printOctal}
 	};
 	int i = 0, j = 0, cont = 0;
