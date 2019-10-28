@@ -6,21 +6,17 @@
  */
 int printString(va_list lista)
 {
-int cs = 0;
-char *string = va_arg(lista, char*);
-if (string == 0)
-{
-while (string[cs] != '\0')
-{
-_putchar(string[cs]);
-cs++;
-}
-}
-else
-{
-write(2, "Error", 5);
-}
-return (cs);
+int i, cont = 0;
+char *string;
+
+string = va_arg(lista, char *);
+if (string == NULL)
+string = "(null)";
+
+for (i = 0; string[i]; i++)
+cont += _putchar(string[i]);
+
+return (cont);
 }
 /**
 * printChar - Print String
@@ -29,15 +25,7 @@ return (cs);
 */
 int printChar(va_list lista)
 {
-char chart = va_arg(lista, int);
-if (chart == 0)
-{
-_putchar(chart);
-return (1);
-}
-else
-{
-write(2, "Error", 5);
-}
-return (0);
+int cs = va_arg(lista, int);
+
+return (_putchar(cs));
 }
