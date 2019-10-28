@@ -9,35 +9,35 @@
 */
 int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 {
-	int i = 0, j = 0;
+int i = 0, j = 0;
 while (format && format[i])
 {
-if (format[i] == '%' && format[i + 1] != '%')
-{
-for (j = 0; j < 7; j++)
-{
-if (format[i] == '%' && format[i + 1] == tipos[j].typec)
-{
-cont += tipos[j].fun(list);
-i++;
-break;
+	if (format[i] == '%' && format[i + 1] != '%')
+	{
+		for (j = 0; j < 7; j++)
+		{
+			if (format[i] == '%' && format[i + 1] == tipos[j].typec)
+			{
+				cont += tipos[j].fun(list);
+				i++;
+				break;
+			}
+		}
+	}
+	else if (format[i] == '%' && format[i + 1] == '%')
+	{
+		_putchar('%');
+		i++;
+		cont += 1;
+	}
+	else
+	{
+		_putchar(format[i]);
+		cont++;
+	}
+	i++;
 }
-}
-}
-else if (format[i] == '%' && format[i + 1] == '%')
-{
-_putchar('%');
-i++;
-cont += 1;
-}
-else
-{
-_putchar(format[i]);
-cont++;
-}
-i++;
-}
-return (cont);
+	return (cont);
 }
 
 
@@ -53,13 +53,11 @@ typedate tipos[] = {
 	{'d', printDecimal}, {'b', printBinary}, {'u', printUnsigned},
 	{'o', printOctal}
 };
+va_list list;
 int cont = -1;
 
 if (format != NULL)
 {
-
-va_list list;
-
 va_start(list, format);
 if (format[0] == '%' && format[1] == '\0')
 {
