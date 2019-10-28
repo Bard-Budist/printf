@@ -6,7 +6,8 @@
 
 int printHexadecimalx(unsigned int lista)
 {
-int i, j , cont = 0; aux;
+/**
+int i, j , cont = 0, aux;
 unsigned int num = lista;
 char *p;
 if (lista == 0)
@@ -14,4 +15,7 @@ if (lista == 0)
 while ()
 {
 }
+*/
+printf("%u", lista);
+return (0);
 }
