@@ -17,7 +17,7 @@ typedef struct typeprint
 	int (*fun)(va_list lista);
 } typedate;
 /*Second function for _printf */
-int opFunction(int cont, va_list list, const typedate tipos[],
+int opFunction(int cont, va_list list, typedate tipos[],
 const char *format);
 int _strcmp(char *s1, char *s2);
 int _putchar(char c);
