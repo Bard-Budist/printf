@@ -1,6 +1,13 @@
 #include "holberton.h"
-int opFunction(int cont, va_list list, const typedate tipos[],
-const char *format)
+/**
+ * opFunction - Second function for _printf
+ * @cont: Contador
+ * @list: Lista arguments
+ * @tipos: Tipos que nos trae el JSON
+ * @format: Formato
+ * Return: Len
+*/
+int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 {
 	int i = 0, j = 0;
 while (format && format[i])
@@ -41,7 +48,7 @@ while (format && format[i])
  */
 int _printf(const char *format, ...)
 {
-const typedate tipos[] = {
+typedate tipos[] = {
 	{'s', printString}, {'c', printChar}, {'i', printInteger},
 	{'d', printDecimal}, {'b', printBinary}, {'u', printUnsigned},
 	{'o', printOctal}
