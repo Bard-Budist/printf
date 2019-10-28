@@ -23,6 +23,7 @@ while (format && format[i])
 				break;
 			}
 		}
+		return (-1);
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
