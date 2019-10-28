@@ -12,10 +12,7 @@ char *string;
 string = va_arg(lista, char *);
 
 if (string == NULL)
-{
-	string = "(null)";
-	return (-1);
-}
+string = "(null)";
 
 for (i = 0; string[i]; i++)
 cont += _putchar(string[i]);
