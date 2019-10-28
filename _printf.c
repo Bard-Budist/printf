@@ -59,7 +59,7 @@ int cont = -1;
 if (format != NULL)
 {
 	va_start(list, format);
-	if (format[0] == '%' && format[1] == '\0' && format == NULL)
+	if (format[0] == '%' && format[1] == '\0')
 	{
 		return (-1);
 	}
