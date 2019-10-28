@@ -27,8 +27,6 @@ return (cont);
 int printChar(va_list lista)
 {
 int cs = va_arg(lista, int);
-if (cs == '\0')
-return (-1);
 return (_putchar(cs));
 }
 
