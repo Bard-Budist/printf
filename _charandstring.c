@@ -26,7 +26,7 @@ return (cont);
 int printChar(va_list lista)
 {
 int cs = va_arg(lista, int);
-if (cs != '\0')
+if (cs >= 32 && cs < 128)
 {
 return (_putchar(cs));
 }
