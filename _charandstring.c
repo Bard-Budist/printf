@@ -10,6 +10,7 @@ int i, cont = 0;
 char *string;
 
 string = va_arg(lista, char *);
+
 if (string == NULL)
 string = "(null)";
 
