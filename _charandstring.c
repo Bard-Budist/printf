@@ -26,7 +26,10 @@ return (cont);
 int printChar(va_list lista)
 {
 int cs = va_arg(lista, int);
-
+if (cs != '\0')
+{
 return (_putchar(cs));
+}
+return (0);
 }
 
