@@ -12,7 +12,11 @@ int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 int i = 0, j = 0;
 while (format && format[i])
 {
-	if (format[i] == '%' && format[i + 1] != '%')
+	if (format[i] == '%' && format[i + 1] == '\0')
+	{
+		return (-1);
+	}
+	else if (format[i] == '%' && format[i + 1] != '%')
 	{
 		for (j = 0; j < 7; j++)
 		{
@@ -20,10 +24,8 @@ while (format && format[i])
 			{
 				cont += tipos[j].fun(list);
 				i++;
-				break;
 			}
 		}
-		return (-1);
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
@@ -60,10 +62,7 @@ int cont = -1;
 if (format != NULL)
 {
 	va_start(list, format);
-	if (format[0] == '%' && format[1] == '\0')
-	{
-		return (-1);
-	}
+
 	cont = 0;
 	cont = opFunction(cont, list, tipos, format);
 
