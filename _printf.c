@@ -11,10 +11,16 @@ int _printf(const char *format, ...)
 		{'d', printDecimal}, {'b', printBinary}, {'u', printUnsigned},
 		{'o', printOctal}
 	};
-	int i = 0, j = 0, cont = 0;
+        int cont = -1;
+        if (format != NULL)
+        {
+	int i = 0, j = 0;
 	va_list list;
-
+        
 	va_start(list, format);
+        if (format[0] == '%' && format[1] == '\0')
+                return (-1);
+        cont = 0;
 	while (format && format[i])
 	{
 		if (format[i] == '%' && format[i + 1] != '%')
@@ -43,5 +49,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(list);
+        }
 	return (cont);
 }
