@@ -58,11 +58,11 @@ int cont = -1;
 
 if (format != NULL)
 {
-va_start(list, format);
-if (format[0] == '%' && format[1] == '\0')
-{
-	return (-1);
-}
+	va_start(list, format);
+	if (format[0] == '%' && format[1] == '\0')
+	{
+		return (-1);
+	}
 cont = 0;
 cont = opFunction(cont, list, tipos, format);
 
