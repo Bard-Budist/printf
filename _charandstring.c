@@ -6,18 +6,17 @@
  */
 int printString(va_list lista)
 {
-	int cs = 0;
-	char *string = va_arg(lista, char*);
+int i, cont = 0;
+char *string;
 
-	if (string == 0)
-	{
-		while (string[cs] != '\0')
-		{
-			_putchar(string[cs]);
-			cs++;
-		}
-	}
-	return (cs);
+string = va_arg(lista, char *);
+if (string == NULL)
+string = "(null)";
+
+for (i = 0; string[i]; i++)
+cont += _putchar(string[i]);
+
+return (cont);
 }
 /**
  * printChar - Print String
@@ -26,13 +25,8 @@ int printString(va_list lista)
  */
 int printChar(va_list lista)
 {
-	char chart = va_arg(lista, int);
+int cs = va_arg(lista, int);
 
-	if (chart == 0)
-	{
-		_putchar(chart);
-		return (1);
-	}
-	return (0);
+return (_putchar(cs));
 }
 

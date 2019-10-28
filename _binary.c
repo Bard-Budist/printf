@@ -7,24 +7,33 @@
  */
 int printBinary(va_list lista)
 {
-	int number = va_arg(lista, int);
-	int i = 0, j, divi, temp = number, contador = 0;
+unsigned int i, cont, num, bin, p[32];
 
-	while (temp > 0)
-	{
-		temp /= 2;
-		divi++;
+i = 0, cont = 0;
+num = va_arg(lista, int);
 
-	}
-	for (i = 0; i < divi; i++)
-	{
-		temp = number;
-		for (j = (divi - i); j > 1; j--)
-		{
-			temp /= 2;
-		}
-		_putchar((temp % 2) + '0');
-		contador++;
-	}
-	return (contador);
+if (num < 1)
+{
+_putchar(48);
+cont++;
+return (cont);
+}
+else
+{
+while (num > 0)
+{
+bin = num % 2;
+num /= 2;
+p[cont] = bin;
+cont++;
+}
+i = cont - 1;
+while (i > 0)
+{
+_putchar('0' + p[i]);
+i--;
+}
+_putchar('0' + p[i]);
+}
+return (cont);
 }
