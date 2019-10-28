@@ -23,6 +23,7 @@ while (format && format[i])
 				break;
 			}
 		}
+		return (-1);
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
@@ -59,7 +60,7 @@ int cont = -1;
 if (format != NULL)
 {
 	va_start(list, format);
-	if (format[0] == '%' && format[1] == '\0' && format == NULL)
+	if (format[0] == '%' && format[1] == '\0')
 	{
 		return (-1);
 	}
