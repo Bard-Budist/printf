@@ -7,6 +7,9 @@
 */
 char *_littleBuffer(void)
 {
-	char *buffer[1024];
+	char *buffer = malloc(1024);
+	if (buffer == NULL)
+	return (NULL);
+
 	return (buffer);
 }
