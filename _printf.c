@@ -1,4 +1,18 @@
 #include "holberton.h"
+int printUnk(int i, int spaces, const char *format, int band)
+{
+	if (band == 0 && spaces > 0)
+		{
+			_putchar(format[i]);
+			_putchar(' ');
+			_putchar(format[i + spaces + 1]);
+			return (spaces + i + 1);
+	}
+	else if (band == 0)
+	_putchar(format[i]);
+	return (0);
+}
+
 /**
  * opFunction - Second function for _printf
  * @cont: Contador
@@ -9,27 +23,29 @@
 */
 int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 {
-int i = 0, j = 0, band = 0;
-while (format && format[i])
+int i = 0, j = 0, band = 0, spaces = 0;
+while (format && format[i] != '\0')
 {
 	band = 0;
 	if (format[i] == '%' && format[i + 1] == '\0')
-	{
-		return (-1);
-	}
+	return (-1);
 	else if (format[i] == '%' && format[i + 1] != '%')
 	{
-		for (j = 0; j < 7; j++)
+		spaces = 0;
+		while (format[i + spaces + 1] == ' ')
 		{
-			if (format[i] == '%' && format[i + 1] == tipos[j].typec)
+			spaces++;
+		}
+		for (j = 0; j < 5; j++)
+		{
+			if (format[i] == '%' && format[i + spaces + 1] == tipos[j].typec)
 			{
 				cont += tipos[j].fun(list);
-				i++;
+				i += spaces + 1;
 				band = 1;
 			}
 		}
-		if (band == 0)
-		_putchar(format[i]);
+		i += printUnk(i, spaces, format, band);
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
