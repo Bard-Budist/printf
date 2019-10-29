@@ -32,4 +32,5 @@ int printUnsigned(va_list lista);
 int printUnsignedDigit(unsigned int num, int *cont);
 int printOctal(va_list lista);
 int printDigitOctal(unsigned int num, int *cont);
+char *_littleBuffer(void);
 #endif /* Libraries Printf Giovanni and Lina */
