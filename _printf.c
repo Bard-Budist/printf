@@ -9,7 +9,7 @@
 */
 int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 {
-int i = 0, j = 0;
+int i = 0, j = 0, band = 0;
 while (format && format[i])
 {
 	if (format[i] == '%' && format[i + 1] == '\0')
@@ -24,8 +24,11 @@ while (format && format[i])
 			{
 				cont += tipos[j].fun(list);
 				i++;
+				band = 1;
 			}
 		}
+		if (band == 0)
+		_putchar(format[i]);
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
