@@ -1,16 +1,24 @@
 #include "holberton.h"
+/**
+ * printUnk - 3th partition of code
+ * @i: Cont
+ * @spaces: Espaces
+ * @format: Format
+ * @band: Band
+ * Return: Int
+*/
 int printUnk(int i, int spaces, const char *format, int band)
 {
-	if (band == 0 && spaces > 0)
-		{
-			_putchar(format[i]);
-			_putchar(' ');
-			_putchar(format[i + spaces + 1]);
-			return (spaces + i + 1);
-	}
-	else if (band == 0)
+if (band == 0 && spaces > 0)
+{
 	_putchar(format[i]);
-	return (0);
+	_putchar(' ');
+	_putchar(format[i + spaces + 1]);
+	return (spaces + i + 1);
+}
+else if (band == 0)
+_putchar(format[i]);
+return (0);
 }
 
 /**
