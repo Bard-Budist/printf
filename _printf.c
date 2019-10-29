@@ -65,7 +65,7 @@ int cont = 0;
 va_start(list, format);
 if (format == NULL)
 {
-return (-1);	
+return (-1);
 }
 cont = opFunction(cont, list, tipos, format);
 va_end(list);
