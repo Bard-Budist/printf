@@ -14,8 +14,9 @@ string = va_arg(lista, char *);
 if (string == NULL)
 string = "(null)";
 
-for (i = 0; string[i]; i++)
-cont += _putchar(string[i]);
+for (i = 0; string[i] != '\0'; i++)
+_putchar(string[i]);
+cont++;
 
 return (cont);
 }
@@ -27,6 +28,7 @@ return (cont);
 int printChar(va_list lista)
 {
 int cs = va_arg(lista, int);
-return (_putchar(cs));
+_putchar(cs);
+return (1);
 }
 
