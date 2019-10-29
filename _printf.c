@@ -35,8 +35,17 @@ while (format && format[i])
 			_putchar(format[i + spaces]);
 			i += spaces;
 		}
-		else if (band == 0)
-		_putchar(format[i]);
+		else if (band == 0 && format[i + 2] != '\n')
+		{
+			_putchar(format[i]);
+			cont++;
+
+		}
+		else if (band == 0 && format[i + 2] == '\n')
+		{
+			_putchar(format[i]);
+			cont++;
+		}
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
@@ -49,8 +58,6 @@ while (format && format[i])
 }
 	return (cont);
 }
-
-
 /**
  * _printf - Printf!!
  * @format: Format
