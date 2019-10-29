@@ -12,6 +12,7 @@ int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 int i = 0, j = 0, band = 0;
 while (format && format[i])
 {
+	band = 0;
 	if (format[i] == '%' && format[i + 1] == '\0')
 	{
 		return (-1);
