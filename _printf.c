@@ -1,27 +1,5 @@
 #include "holberton.h"
 /**
- * printUnk - 3th partition of code
- * @i: Cont
- * @spaces: Espaces
- * @format: Format
- * @band: Band
- * Return: Int
-*/
-int printUnk(int i, int spaces, const char *format, int band)
-{
-if (band == 0 && spaces > 0)
-{
-	_putchar(format[i]);
-	_putchar(' ');
-	_putchar(format[i + spaces + 1]);
-	return (spaces + i + 1);
-}
-else if (band == 0)
-_putchar(format[i]);
-return (0);
-}
-
-/**
  * opFunction - Second function for _printf
  * @cont: Contador
  * @list: Lista arguments
@@ -32,17 +10,15 @@ return (0);
 int opFunction(int cont, va_list list, typedate tipos[], const char *format)
 {
 int i = 0, j = 0, band = 0, spaces = 0;
-while (format && format[i] != '\0')
+while (format && format[i])
 {
 	band = 0;
 	if (format[i] == '%' && format[i + 1] == '\0')
 	return (-1);
 	else if (format[i] == '%' && format[i + 1] != '%')
 	{
-		spaces = 0;
-		while (format[i + spaces + 1] == ' ')
+		for (spaces = 0; format[i + spaces + 1] == ' '; spaces++)
 		{
-			spaces++;
 		}
 		for (j = 0; j < 5; j++)
 		{
@@ -53,19 +29,22 @@ while (format && format[i] != '\0')
 				band = 1;
 			}
 		}
-		i += printUnk(i, spaces, format, band);
+		if (band == 0 && spaces > 0)
+		{
+			i += _putchar(' ');
+			_putchar(format[i + spaces]);
+			i += spaces;
+		}
+		else if (band == 0)
+		_putchar(format[i]);
 	}
 	else if (format[i] == '%' && format[i + 1] == '%')
 	{
-		_putchar('%');
-		i++;
+		i += _putchar('%');
 		cont += 1;
 	}
 	else
-	{
-		_putchar(format[i]);
-		cont++;
-	}
+		cont += _putchar(format[i]);
 	i++;
 }
 	return (cont);
