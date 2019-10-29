@@ -19,6 +19,7 @@ typedef struct typeprint
 /*Second function for _printf */
 int opFunction(int cont, va_list list, typedate tipos[],
 const char *format);
+int printUnk(int i, int spaces, const char *format, int band);
 int _strcmp(char *s1, char *s2);
 int _putchar(char c);
 int _printf(const char *format, ...);
