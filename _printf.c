@@ -17,9 +17,6 @@ while (format && format[i])
 	return (-1);
 	else if (format[i] == '%' && format[i + 1] != '%')
 	{
-		for (spaces = 0; format[i + spaces + 1] == ' '; spaces++)
-		{
-		}
 		for (j = 0; j < 5; j++)
 		{
 			if (format[i] == '%' && format[i + spaces + 1] == tipos[j].typec)
@@ -29,13 +26,7 @@ while (format && format[i])
 				band = 1;
 			}
 		}
-		if (band == 0 && spaces > 0)
-		{
-			i += _putchar(' ');
-			_putchar(format[i + spaces]);
-			i += spaces;
-		}
-		else if (band == 0 && format[i + 2] != '\n')
+		if (band == 0 && format[i + 2] != '\n')
 		{
 			_putchar(format[i]);
 			cont++;
