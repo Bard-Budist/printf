@@ -60,15 +60,16 @@ typedate tipos[] = {
 	{'d', printDecimal}, {'b', printBinary}
 };
 va_list list;
-int cont = 0;
+int cont;
 
-va_start(list, format);
 if (format == NULL)
 {
 return (-1);
 }
+va_start(list, format);
 cont = opFunction(cont, list, tipos, format);
 va_end(list);
+
 return (cont);
 }
 
