@@ -14,11 +14,12 @@ string = va_arg(lista, char *);
 if (string == NULL)
 string = "(null)";
 
-for (i = 0; string[i] != '\0'; i++)
+for (i = 0; string[i]; i++)
 cont += _putchar(string[i]);
 
 return (cont);
 }
+
 /**
  * printChar - Print String
  * @lista: Var list
@@ -27,7 +28,5 @@ return (cont);
 int printChar(va_list lista)
 {
 int cs = va_arg(lista, int);
-_putchar(cs);
-return (1);
+return (_putchar(cs));
 }
-
