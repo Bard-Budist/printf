@@ -15,8 +15,7 @@ if (string == NULL)
 string = "(null)";
 
 for (i = 0; string[i] != '\0'; i++)
-_putchar(string[i]);
-cont++;
+cont += _putchar(string[i]);
 
 return (cont);
 }
