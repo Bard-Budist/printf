@@ -17,7 +17,7 @@ while (format && format[i])
 	return (-1);
 	else if (format[i] == '%' && format[i + 1] != '%')
 	{
-		for (j = 0; j < 5; j++)
+		for (j = 0; j < 7; j++)
 		{
 			if (format[i] == '%' && format[i + spaces + 1] == tipos[j].typec)
 			{
