@@ -7,9 +7,31 @@
 .SH SYNOPSIS
 .B #include "holberton.h"
 
-.B int _printf(const char *format, ...)
+.B int _printf(const char *format, ...);
+
+.B int opFunction(int cont, va_list list, typedate tipos[], const char *format);
 .SH DESCRIPTION
-conversion specifiers: c , s , %, d, i
+The printf() functions produce the output according to the format we need.
+.B
+Return value
+
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+
+.B 
+conversion specifiers:
+
+c:
+The function prints a character, it can be entered in ASCCI format in the range of> = 32 and 127 <= which are the printable ranges within the function.
+
+s:
+Receive as an argument a char pointer or array string that does not include the null termination, in case a NULL is sent it will print (null).
+
+%:
+If the next sign is equal to the percent sign then% will be printed in that case.
+
+d and i:
+Convert the parameter number to a base number 10, return 0 if the argument is empty.
+
 .SH OPTIONS
 others
 .SH SEE ALSO
@@ -17,4 +39,7 @@ printf(3)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Giovanni Ayala (https://github.com/GiovanniAyala) and Lina Marìa Montaño Ramìrez (https://github.com/calypsobronte)
+Giovanni Ayala 
+.I (https://github.com/GiovanniAyala) 
+and Lina Marìa Montaño Ramìrez 
+.I (https://github.com/calypsobronte)
