@@ -12,6 +12,7 @@
 .B int opFunction(int cont, va_list list, typedate tipos[], const char *format);
 .SH DESCRIPTION
 The printf() functions produce the output according to the format we need.
+
 .B
 Return value
 
